@@ -314,3 +314,75 @@ body{
   from{ opacity:1; transform: translateY(0); }
   to{ opacity:0; transform: translateY(-10px); }
 }
+/* === CINEMATIC INTRO === */
+.cinematic-intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 1s ease;
+}
+
+.creator-text {
+  color: #dcdcdc;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  text-shadow: 0 0 10px rgba(0,255,170,0.4);
+}
+
+.creator-text span {
+  color: #00ffb7;
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(0,255,170,0.6);
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Bloom Effect */
+.bloom-circle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,170,0.9) 0%, transparent 70%);
+  opacity: 0.8;
+  filter: blur(100px);
+  transition: all 1.5s ease-out;
+}
+
+.bloom-circle.expand {
+  width: 3000px;
+  height: 3000px;
+  opacity: 0;
+}
+
+/* Fade Out */
+.cinematic-intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.footer span {
+  color: #00ffb7;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0,255,150,0.4);
+}

@@ -1,33 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Synapse – AI Study Assistant</title>
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
 <body>
-
-  <!-- Aurora Background -->
   <div class="aurora-bg"></div>
 
-  <!-- Navigation Bar -->
+  <!-- 🎬 CINEMATIC INTRO -->
+  <div class="cinematic-intro" id="cinematicIntro">
+    <div class="creator-text">Created by <span>Harsha Singisala</span></div>
+    <div class="bloom-circle" id="bloomCircle"></div>
+  </div>
+
+  <!-- === MAIN SYNAPSE INTERFACE === -->
   <nav class="nav-bar">
     <div class="nav-logo">Synapse <span>AI</span></div>
-    <button id="accountBtn">Account</button>
+    <div class="nav-actions">
+      <button id="accountBtn">Account</button>
+    </div>
   </nav>
 
-  <!-- Main Container -->
   <main class="main-container">
-    <section id="intro-screen" class="intro-screen">
-      <h1 class="intro-title">Welcome to <span>Synapse</span></h1>
+    <section class="intro-screen">
+      <h1 class="intro-title"><span>Synapse</span> AI</h1>
       <p class="intro-subtitle">Your futuristic study assistant for smarter learning.</p>
-     <button id="startBtn" class="start-btn">Activate Synapse</button>
+      <button class="start-btn" id="startBtn">Activate Synapse</button>
+    </section>
+  </main>
 
-<script src="scripts/intro.js"></script>
-<script>
-  document.getElementById("startBtn").addEventListener("click", () => {
-    window.location.href = "chat.html";
-  });
-</script>
+  <div class="modal hidden" id="accountModal">
+    <div class="modal-content glassy">
+      <h2>Account</h2>
+      <p id="userInfo">Signed in as Guest</p>
+      <button id="googleBtn">Continue with Google</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </div>
 
+  <script>
+    // Activate button
+    document.getElementById("startBtn").addEventListener("click", () => {
+      window.location.href = "chat.html";
+    });
+
+    // Account modal
+    const accountBtn = document.getElementById("accountBtn");
+    const modal = document.getElementById("accountModal");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    accountBtn.onclick = () => modal.classList.toggle("hidden");
+    logoutBtn.onclick = () => modal.classList.add("hidden");
+
+    // 🎬 Cinematic intro logic
+    window.addEventListener("load", () => {
+      const intro = document.getElementById("cinematicIntro");
+      const bloom = document.getElementById("bloomCircle");
+
+      setTimeout(() => {
+        bloom.classList.add("expand");
+      }, 4200);
+
+      setTimeout(() => {
+        intro.classList.add("fade-out");
+      }, 5200);
+
+      setTimeout(() => {
+        intro.style.display = "none";
+      }, 6000);
+    });
+  </script>
+  <footer class="footer">
+  <p>© 2025 Synapse AI — Created by <span>Harsha Singisala</span></p>
+</footer>
+
+</body>
