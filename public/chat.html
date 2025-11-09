@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synapse Chat</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="aurora-bg"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-logo">Synapse <span>AI</span></div>
+    <div class="nav-actions">
+      <button id="accountBtn">Create Account</button>
+      <button onclick="window.location.href='index.html'">Home</button>
+    </div>
+  </nav>
+
+  <!-- Chat Section -->
+  <main class="main-container">
+    <section id="chat-screen" class="chat-screen">
+      <div class="chat-box" id="chat-box">
+        <div class="ai-msg">Hey there 👋, ready to make learning effortless?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask Synapse anything..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Account Modal -->
+  <div id="accountModal" class="modal hidden">
+    <div class="modal-content glassy">
+      <h2>Create Your Account</h2>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <input type="email" id="email" placeholder="Enter your email" />
+      <input type="password" id="password" placeholder="Create password" />
+      <button id="createBtn">Create</button>
+      <button id="closeModal">Cancel</button>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

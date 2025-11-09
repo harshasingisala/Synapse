@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+google-generativeai
+python-dotenv
+PyPDF2
+python-docx
+pyttsx3
+moviepy

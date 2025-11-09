@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Synapse – Secure Access</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+  <!-- Aurora backdrop shared site-wide -->
+  <div class="aurora-bg"></div>
+
+  <!-- Cinematic Login Overlay -->
+  <div class="login-screen" id="loginScreen">
+    <div class="scanlines"></div>
+    <div class="crt-glow"></div>
+
+    <div class="login-frame">
+      <div class="synapse-mark">
+        <div class="glyph">⟡</div>
+        <div class="brand">S Y N A P S E</div>
+        <div class="subtitle">C O G N I T I V E &nbsp; L A T T I C E</div>
+      </div>
+
+      <div class="boot-terminal" id="bootTerminal">
+        <!-- Lines are injected by login.js -->
+      </div>
+
+      <form class="login-form" id="loginForm" autocomplete="off">
+        <div class="field">
+          <label>IDENT</label>
+          <input id="ident" type="text" placeholder="username or email" />
+        </div>
+        <div class="field">
+          <label>PASSKEY</label>
+          <input id="pass" type="password" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="neon-btn" id="unlockBtn">
+          <span class="btn-glow"></span>
+          INITIATE ACCESS
+        </button>
+        <div class="login-hint">Tip: leave any values for demo — no DB yet.</div>
+      </form>
+    </div>
+
+    <!-- Access Granted FX -->
+    <div class="access-overlay" id="accessOverlay">
+      <div class="access-bloom" id="accessBloom"></div>
+      <div class="access-badge">ACCESS GRANTED</div>
+    </div>
+  </div>
+
+  <script src="scripts/login.js"></script>
+</body>
+</html>
